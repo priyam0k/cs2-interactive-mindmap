@@ -1,0 +1,866 @@
+{
+  "name": "Actuarial Science: Risk Modelling & Survival Analysis (CS2)",
+  "children": [
+    {
+      "name": "Core Study Materials & Support",
+      "children": [
+        {
+          "name": "Core Reading",
+          "children": [
+            { "name": "Examiners will use" },
+            { "name": "Updated annually" }
+          ]
+        },
+        {
+          "name": "Tutorials",
+          "children": [
+            { "name": "Face-to-face" },
+            { "name": "Live Online" },
+            { "name": "Preparation: Read Course Notes" }
+          ]
+        },
+        {
+          "name": "Exam Preparation",
+          "children": [
+            { "name": "Know & understand Core Reading" },
+            { "name": "Aware of examiner expectations" },
+            { "name": "Question practice (past exams)" }
+          ]
+        },
+        {
+          "name": "Active Study Techniques",
+          "children": [
+            { "name": "Question everything ('why, how, what for, when?')" },
+            { "name": "Apply own judgement" }
+          ]
+        },
+        {
+          "name": "Examinations",
+          "children": [
+            { "name": "Any syllabus topic, any command verb" },
+            { "name": "Check profession's website for latest guidance" }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Stochastic Processes",
+      "children": [
+        {
+          "name": "General Concepts",
+          "children": [
+            { "name": "Increment: Change in value X(t2) - X(t1)" },
+            { "name": "Independent Increments" },
+            { "name": "Filtration: Expectations conditional on past history" }
+          ]
+        },
+        {
+          "name": "Random Walk",
+          "children": [
+            { "name": "Xn = X0 + Y1 + ... + Yn" },
+            { "name": "Yj are IID" },
+            { "name": "Discrete/Continuous State Space" },
+            {
+              "name": "Simple Random Walk",
+              "children": [
+                { "name": "Yj takes +1 or -1" },
+                { "name": "P(Yj=+1) = P(Yj=-1) = 0.5" }
+              ]
+            },
+            {
+              "name": "Boundaries",
+              "children": [
+                { "name": "Reflecting" },
+                { "name": "Absorbing" },
+                { "name": "Mixed" }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "Markov Chains",
+          "children": [
+            { "name": "Discrete time, discrete state space" },
+            { "name": "Markov Property: Future depends only on current state" },
+            { 
+              "name": "Chapman-Kolmogorov Equations",
+              "children": [
+                {"name": "p_i,j(m,n) = Sum_k [p_i,k(m,l) * p_k,j(l,n)]"},
+                {"name": "Matrix multiplication (P(m,n) = P(m,l) * P(l,n))"},
+                {"name": "Proof not expected in exam"}
+              ]
+            },
+            { 
+              "name": "Time-homogeneous Markov Chains",
+              "children": [
+                {"name": "One-step transition probabilities are time independent"},
+                {"name": "Chapman-Kolmogorov simplified"}
+              ]
+            },
+            { 
+              "name": "Distribution Fully Determined by",
+              "children": [
+                {"name": "Initial probability distribution"},
+                {"name": "One-step transition probabilities"}
+              ]
+            },
+            { 
+              "name": "Stationary Distribution",
+              "children": [
+                {"name": "p * P = p"},
+                {"name": "Sum(pi) = 1"},
+                {"name": "Finite state space: At least one stationary distribution"},
+                {"name": "Irreducible, aperiodic: Unique stationary distribution"},
+                {"name": "Convergence: lim(n->inf) p_i,j(n) = pi_j"}
+              ]
+            }
+          ]
+        },
+        {
+          "name": "Markov Jump Processes",
+          "children": [
+            { "name": "Continuous time, discrete state space" },
+            { "name": "Satisfies Markov property" },
+            { "name": "Time-homogeneous if transition probabilities depend only on interval length" },
+            { 
+              "name": "Inter-event/Holding Times",
+              "children": [
+                  {"name": "Independent Exponential(lambda) random variables"}
+              ]
+            },
+            { 
+              "name": "Generator Matrix (A)",
+              "children": [
+                {"name": "Transition intensities mu_ij"}
+              ]
+            },
+            { 
+              "name": "Kolmogorov Forward Equations",
+               "children": [
+                {"name": "Differential equations for transition probabilities"}
+              ]
+            },
+            { 
+              "name": "Expected Time to Reach State",
+              "children": [
+                {"name": "Recursive formula"}
+              ]
+            },
+            { "name": "Jump Chains (Embedded Chains): Sequence of states entered" }
+          ]
+        },
+        {
+          "name": "Poisson Process",
+          "children": [
+            { "name": "Used to model counts of events (e.g., claims)" },
+            { "name": "Parameter lambda: Average rate of occurrence" },
+            { 
+              "name": "Properties",
+              "children": [
+                {"name": "N(t) is Poisson(lambda*t)"},
+                {"name": "N(t+s) - N(s) is Poisson(lambda*t)"},
+                {"name": "Independent of past"},
+                {"name": "Stationary increments"}
+              ]
+            },
+            { "name": "Assumption: At most one claim in short interval" },
+            { "name": "Application: Motor insurance claims" }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Survival Models",
+      "children": [
+        { 
+          "name": "Future Lifetime",
+          "children": [
+            {"name": "Continuous random variable T_x"},
+            {"name": "Distribution Function F_x(t) = P(T_x <= t)"},
+            {"name": "Survival Function S_x(t) = P(T_x > t) = 1 - F_x(t)"}
+          ]
+        },
+        { 
+          "name": "Actuarial Symbols",
+          "children": [
+            {"name": "t p_x: Probability of surviving t years from age x"},
+            {"name": "t q_x: Probability of dying within t years from age x"},
+            {"name": "q_x: Initial rate of mortality (dying in next year)"},
+            {"name": "m_x: Central rate of mortality (deaths/person-years)"}
+          ]
+        },
+        { 
+          "name": "Force of Mortality (Hazard Rate)",
+          "children":[
+            {"name": "mu_x: Instantaneous rate of mortality at age x"},
+            {"name": "S(t) = exp(-Integral[mu_s ds])"}
+          ]
+        },
+        { 
+          "name": "Expected Future Lifetime",
+          "children": [
+            {"name": "e_x: Curtate expectation (sum p_x^k)"},
+            {"name": "e-circle_x: Complete expectation (integral S_x(t) dt)"},
+            {"name": "e-circle_x approx e_x + 0.5"}
+          ]
+        },
+        { 
+          "name": "Common Mortality Laws",
+          "children": [
+            {"name": "Gompertz: mu_x = B * c^x"},
+            {"name": "Makeham: mu_x = A + B * c^x"}
+          ]
+        },
+        { 
+          "name": "Two-State Markov Model (Alive-Dead)",
+          "children": [
+            {"name": "Assumptions: Markov property, constant mu(x+t), short interval"},
+            {"name": "Poisson model of mortality (D ~ Poisson(cE*mu))"}
+          ]
+        },
+        { 
+          "name": "Multiple-State Models",
+          "children": [
+            {"name": "Healthy, Sick, Dead"},
+            {"name": "Transitions between states"}
+          ]
+        },
+        { 
+          "name": "Censoring",
+          "children": [
+            {"name": "Incomplete information about durations"},
+            {
+              "name": "Types",
+              "children": [
+                {"name": "Right Censoring: Observation cut short"},
+                {"name": "Left Censoring: Entry time unknown"},
+                {"name": "Interval Censoring: Event within interval (e.g., calendar year of death)"},
+                {"name": "Informative Censoring: Censoring event related to outcome"},
+                {"name": "Type I Censoring: Fixed termination time"}
+              ]
+            }
+          ]
+        },
+        { 
+          "name": "Non-Parametric Estimation",
+          "children": [
+            {
+              "name": "Kaplan-Meier Estimator",
+              "children": [
+                {"name": "Product limit estimate of survival function S_hat(t)"},
+                {"name": "Hazard zero except at event times"},
+                {"name": "d_j / n_j"}
+              ]
+            },
+            {
+              "name": "Nelson-Aalen Estimator",
+              "children": [
+                {"name": "Estimates cumulative hazard function Lambda_hat(t)"},
+                {"name": "S_hat(t) = exp(-Lambda_hat(t))"},
+                {"name": "Variance formula available"}
+              ]
+            }
+          ]
+        },
+        { 
+          "name": "Proportional Hazards Models",
+          "children": [
+            {"name": "Effect of covariates on survival"},
+            {"name": "Hazard = Baseline_Hazard * exp(Z' * beta)"},
+            {"name": "Covariate: Any recorded quantity (age, sex, treatment)"},
+            {
+              "name": "Cox Model",
+              "children":[
+                {"name": "Widely used, robust software"},
+                {"name": "Partial likelihood estimation (no ties or Breslow approximation)"},
+                {"name": "Asymptotic multivariate normal distribution for estimators"},
+                {"name": "Asymptotically unbiased"},
+                {"name": "Variance matrix = inverse of observed information matrix"}
+              ]
+            },
+            {
+              "name": "Model Selection",
+              "children":[
+                {"name": "Stepwise: Add or eliminate covariates"},
+                {"name": "Likelihood ratio statistic"},
+                {"name": "Testing for interactions"}
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Mortality Investigation & Graduation",
+      "children": [
+        { 
+          "name": "Crude Estimates",
+          "children": [
+            {"name": "Initial mortality rates from observed data"}
+          ]
+        },
+        { 
+          "name": "Graduation",
+          "children":[
+            {"name": "Improve crude rates using statistical techniques"},
+            {"name": "Aims: Smooth rates, remove random sampling errors, use adjacent age info"},
+            {"name": "Compromise: Adherence to data vs. smoothness"}
+          ]
+        },
+        { 
+          "name": "Assumptions",
+          "children": [
+            {"name": "Constant force of mortality"},
+            {"name": "Uniform distribution of deaths (UDD)"}
+          ]
+        },
+        { 
+          "name": "Principle of Correspondence",
+          "children": [
+            {"name": "Consistency between deaths and exposed to risk"}
+          ]
+        },
+        { 
+          "name": "Methods of Graduation",
+          "children":[
+            {"name": "Parametric Formula (Gompertz, Makeham)"},
+            {"name": "Standard Table (adjusting existing table)"},
+            {"name": "Spline Functions (piecewise polynomials, knots)"}
+          ]
+        },
+        { 
+          "name": "Tests of Graduation (Goodness of Fit)",
+          "children": [
+            {"name": "Chi-squared Test (overall fit)"},
+            {"name": "Signs Test (overall bias)"},
+            {"name": "Runs Test (Grouping of Signs) (clumping of deviations)"},
+            {"name": "Cumulative Deviations Test (overall bias, systematic deviations)"},
+            {"name": "Serial Correlations Test (incorrect shape)"},
+            {"name": "Smoothness (examining third differences)"}
+          ]
+        },
+        { 
+          "name": "Exposed to Risk (E_x^c)",
+          "children": [
+            {"name": "Central rate of mortality: person-years lived"},
+            {"name": "Age last birthday vs. age nearest birthday"},
+            {"name": "Linear interpolation for census dates"}
+          ]
+        },
+        { 
+          "name": "Duplicate Policies",
+          "children": [
+            {"name": "Increases variance of claims"}
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Mortality Projection",
+      "children": [
+        { 
+          "name": "Importance",
+          "children": [
+            {"name": "Life insurance (premiums)"},
+            {"name": "Pensions/annuities (financial commitments)"},
+            {"name": "Governments (state pensions, health/social care)"}
+          ]
+        },
+        { 
+          "name": "Factors",
+          "children": [
+            {"name": "Age"},
+            {"name": "Period (time trend)"},
+            {"name": "Cohort (year of birth)"}
+          ]
+        },
+        { 
+          "name": "Models",
+          "children": [
+            {"name": "One-factor (Age)"},
+            {"name": "Two-factor (Age-Period OR Age-Cohort)"},
+            {"name": "Three-factor (Age-Period-Cohort)"}
+          ]
+        },
+        { 
+          "name": "Expectation-based Approach",
+          "children": [
+            {"name": "Target future mortality rates"},
+            {"name": "Reduction factor R_x,t"},
+            {"name": "Advantages: Straightforward, easy to implement"},
+            {"name": "Disadvantages: Tend to underestimate improvements, circularity in basis"}
+          ]
+        },
+        { 
+          "name": "Lee-Carter Model",
+          "children": [
+            {"name": "log(m_x,t) = a_x + b_x * k_t + epsilon_x,t"},
+            {"name": "a_x: age-specific pattern"},
+            {"name": "b_x: age-specific mortality change"},
+            {"name": "k_t: time-dependent mortality index (time series)"},
+            {"name": "Constraints for identifiability (sum b_x = 1, sum k_t = 0)"},
+            {"name": "Forecasting: k_t using time-series methods"},
+            {
+              "name": "Advantages",
+              "children": [
+                {"name": "Straightforward forecasting"},
+                {"name": "Assess uncertainty (bootstrapping)"},
+                {"name": "Extendable (e.g., p-splines)"}
+              ]
+            },
+            {
+              "name": "Disadvantages",
+              "children": [
+                {"name": "Forecasts can cross over ages"},
+                {"name": "Increasing roughness over time"},
+                {"name": "Assumes constant change across ages"}
+              ]
+            }
+          ]
+        },
+        { 
+          "name": "P-Splines",
+          "children": [
+            {"name": "Extension of spline graduation for forecasting"},
+            {"name": "Polynomials with knots"},
+            {"name": "Penalty for roughness (penalised log-likelihood)"},
+            {"name": "Advantages: Natural extension, easy in R"},
+            {"name": "Disadvantages: Roughness between adjacent ages (can be overcome by 2D)"}
+          ]
+        },
+        { 
+          "name": "Methods based on Explanation",
+          "children": [
+            {"name": "Consider different causes of mortality (cancer, heart disease)"},
+            {
+              "name": "Challenges",
+              "children": [
+                {"name": "Unreliable reporting"},
+                {"name": "Synergistic effects"},
+                {"name": "Unmasking other causes"},
+                {"name": "Short time series data"}
+              ]
+            }
+          ]
+        },
+        { 
+          "name": "Sources of Error",
+          "children": [
+            {"name": "Model misspecification"},
+            {"name": "Incorrect judgement"},
+            {"name": "Random variability"},
+            {"name": "Errors in data"},
+            {"name": "Correlated forecast errors (positive correlation common)"}
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Time Series Analysis",
+      "children": [
+        {
+          "name": "Concepts",
+          "children": [
+            {"name": "Univariate time series: Sequence of random variables X_t"},
+            {"name": "Strictly Stationary: Joint distributions identical over time"},
+            {"name": "Weakly Stationary: Constant mean, covariance depends only on lag"},
+            {"name": "Non-stationary: Exhibits trends or cyclic variation"},
+            {"name": "Integrated (I(d)): d-th differenced series is stationary"}
+          ]
+        },
+        {
+          "name": "Tools for Analysis",
+          "children": [
+            {"name": "Plot of series against time (detect trends/cycles)"},
+            {"name": "Sample Autocorrelation Function (ACF) (detect non-stationarity)"},
+            {"name": "Sample Partial Autocorrelation Function (PACF)"}
+          ]
+        },
+        {
+          "name": "Time Series Models",
+          "children": [
+            {
+              "name": "Autoregressive (AR(p))",
+              "children": [
+                {"name": "X_t depends on p past values and white noise"},
+                {"name": "Stationarity: Roots of characteristic equation > 1 in absolute value"},
+                {"name": "PACF cuts off for k > p"}
+              ]
+            },
+            {
+              "name": "Moving Average (MA(q))",
+              "children": [
+                {"name": "X_t depends on q past white noise terms and current white noise"},
+                {"name": "ACF cuts off for k > q"},
+                {"name": "Cannot be Markov"}
+              ]
+            },
+            {"name": "Autoregressive Moving Average (ARMA(p,q)): Combines AR and MA"},
+            {
+              "name": "Autoregressive Integrated Moving Average (ARIMA(p,d,q))",
+              "children": [
+                {"name": "ARMA model on d-th differenced series"},
+                {"name": "Random walk is an ARIMA(0,1,0)"}
+              ]
+            }
+          ]
+        },
+        {
+          "name": "Box-Jenkins Approach",
+          "children": [
+            {"name": "Tentative identification (ACF/PACF)"},
+            {"name": "Estimation of parameters"},
+            {"name": "Diagnostic checks (e.g., Ljung-Box test for residuals)"}
+          ]
+        },
+        {
+          "name": "Techniques for Non-Stationarity",
+          "children": [
+            {"name": "Differencing (e.g., diff() in R)"},
+            {"name": "Seasonal Differencing (for seasonal patterns)"},
+            {"name": "Linear Trend Removal (ordinary least squares)"},
+            {"name": "Transformations (e.g., logarithmic for variance dependence)"},
+            {"name": "Method of Seasonal Means (subtracting estimated mean for period)"}
+          ]
+        },
+        {
+          "name": "Estimation Methods",
+          "children": [
+            {"name": "Method of Moments (Yule-Walker equations for AR models)"},
+            {"name": "Maximum Likelihood Estimation"}
+          ]
+        },
+        {
+          "name": "Vector Time Series",
+          "children": [
+            {"name": "Vector Autoregressive (VAR(p)) processes"},
+            {"name": "Cointegrated Time Series (I(1) processes whose linear combination is stationary)"}
+          ]
+        },
+        {
+          "name": "Forecasting",
+          "children": [
+            {"name": "Predict() function in R"},
+            {"name": "Exponential Smoothing"}
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Loss Distributions & Risk Models",
+      "children": [
+        {
+          "name": "Loss Distributions (Individual Claim Amounts)",
+          "children": [
+            {"name": "Exponential Distribution"},
+            {"name": "Gamma Distribution"},
+            {"name": "Lognormal Distribution"},
+            {"name": "Pareto Distribution"},
+            {"name": "Weibull Distribution"},
+            {"name": "Burr Distribution"},
+            {"name": "Beta Distribution"}
+          ]
+        },
+        {
+          "name": "Estimation of Parameters",
+          "children": [
+            {
+              "name": "Method of Moments",
+              "children": [
+                {"name": "Equate sample moments to theoretical moments"},
+                {"name": "Solve simultaneous equations"}
+              ]
+            },
+            {
+              "name": "Maximum Likelihood Estimation (MLE)",
+              "children": [
+                {"name": "Write likelihood function L(theta) or log-likelihood l(theta)"},
+                {"name": "Maximize by differentiating and setting to 0"}
+              ]
+            },
+            {"name": "Method of Percentiles (Quantiles)"}
+          ]
+        },
+        {
+          "name": "Extreme Value Theory (EVT)",
+          "children": [
+            {"name": "Models for large losses"},
+            {
+              "name": "Approaches",
+              "children": [
+                {"name": "Block maxima (Generalised Extreme Value (GEV) family)"},
+                {"name": "Values exceeding a threshold (Generalised Pareto Distribution (GPD) family)"}
+              ]
+            },
+            {
+              "name": "Measures of Tail Weight",
+              "children": [
+                {"name": "Existence of moments"},
+                {"name": "Limiting density ratios"},
+                {"name": "Hazard rate (increasing = lighter tail, decreasing = heavier tail)"}
+              ]
+            }
+          ]
+        },
+        {
+          "name": "Risk Models (Aggregate Claims)",
+          "children": [
+            {"name": "S = Sum(Xi) (N claims, Xi individual amount)"},
+            {"name": "Collective Risk Model (N is for portfolio as a whole)"},
+            {"name": "Individual Risk Model (N is for individual policies)"},
+            {"name": "Assumptions: Claim numbers and amounts are independent"}
+          ]
+        },
+        {
+          "name": "Compound Distributions",
+          "children": [
+            {"name": "S has a compound distribution if S = Sum(Xi)"},
+            {"name": "Compound Poisson: Sum of independent compound Poisson is compound Poisson"},
+            {"name": "MGF: M_S(t) = M_N(log(M_X(t)))"},
+            {"name": "Expected Value: E[S] = E[N] * E[X]"},
+            {"name": "Variance: Var(S) = E[N]*Var(X) + Var(N)*E[X]^2"},
+            {"name": "Coefficient of Skewness: Can be negative for compound binomial"}
+          ]
+        },
+        {
+          "name": "Reinsurance Arrangements",
+          "children": [
+            {
+              "name": "Proportional Reinsurance",
+              "children": [
+                {"name": "Insurer pays alpha*X, Reinsurer pays (1-alpha)*X"},
+                {"name": "alpha is retained proportion"}
+              ]
+            },
+            {
+              "name": "Excess of Loss Reinsurance (Non-proportional)",
+              "children": [
+                {"name": "Insurer pays up to M (retention level)"},
+                {"name": "Reinsurer pays X - M if X > M"},
+                {"name": "Mean/Variance of Z (reinsurer's payment)"}
+              ]
+            },
+            {"name": "Aggregate Excess of Loss (on total claims S)"}
+          ]
+        },
+        {
+          "name": "Desirable Features for Insurance/Pension Models",
+          "children": [
+            {"name": "Independent individual risks"},
+            {"name": "Small probability of insured event"},
+            {"name": "Large number of similar risks pooled"},
+            {"name": "Limited insurer liability"},
+            {"name": "Eliminate moral hazards"}
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Copulas",
+      "children": [
+        {
+          "name": "Joint Probability Modelling",
+          "children": [
+            {"name": "Joint PDF/CDF to compute joint probabilities"},
+            {"name": "Nature of association not always explicit in joint CDF"}
+          ]
+        },
+        {
+          "name": "Measures of Association",
+          "children": [
+            {"name": "Pearson's rho (linear correlation)"},
+            {"name": "Tail Dependence (dependence in tails of distribution)"}
+          ]
+        },
+        {
+          "name": "Copula Function C(u,v)",
+          "children": [
+            {"name": "Links joint distribution to marginal distributions"},
+            {"name": "C(u,v) = F(F_X^-1(u), F_Y^-1(v))"},
+            {"name": "Sklar's Theorem (Existence and Uniqueness)"},
+            {"name": "3D representations and contour diagrams"}
+          ]
+        },
+        {
+          "name": "Families of Copulas",
+          "children": [
+            {
+              "name": "Archimedean Copulas",
+              "children": [
+                {"name": "Clayton Copula (lower tail dependence, no upper tail)"},
+                {"name": "Frank Copula (symmetric tail dependence)"},
+                {"name": "Gumbel Copula (upper tail dependence, no lower tail)"}
+              ]
+            },
+            {
+              "name": "Elliptical Copulas",
+              "children": [
+                {"name": "Gaussian Copula (symmetric tail dependence)"},
+                {"name": "Student's t Copula (symmetric tail dependence, robust to outliers)"}
+              ]
+            }
+          ]
+        },
+        {
+          "name": "Choosing & Fitting Copulas",
+          "children": [
+            {"name": "Select and parameterise marginal distributions"},
+            {"name": "Describe and quantify associations"}
+          ]
+        }
+      ]
+    },
+    {
+      "name": "R Programming for Actuarial Science",
+      "children": [
+        {
+          "name": "Core R Functionality",
+          "children": [
+            { "name": "Matrix operations (matrix(), diag())" },
+            { "name": "Loops (for)" },
+            { "name": "Basic arithmetic operations" },
+            { "name": "Data structures (vectors, data frames)" },
+            { "name": "Conditional statements (pmin(), pmax())" }
+          ]
+        },
+        {
+          "name": "Markov Chain Calculations",
+          "children": [
+            { "name": "Powers of transition matrix (P^n)" },
+            { "name": "Simulating paths (rmarkovchain)" },
+            { "name": "Fitting Markov chains (markovchainFit())" },
+            { "name": "Expected rewards (expectedRewards())" },
+            { "name": "Transition probabilities from data (table(), paste(), substr())" }
+          ]
+        },
+        {
+          "name": "Survival Analysis Calculations",
+          "children": [
+            { "name": "Loading data (read.csv(), read.table())" },
+            { "name": "Survival objects (Surv() in 'survival' package)" },
+            { "name": "Kaplan-Meier (survfit() in 'survival' package)" },
+            { "name": "Nelson-Aalen (survfit() with type='fleming-harrington')" },
+            { "name": "Confidence intervals (summary(), pmax(), pmin())" },
+            { "name": "Cox Proportional Hazards (coxph() in 'survival' package)" },
+            { "name": "Log-likelihood (nlm() for numerical optimisation)" },
+            { "name": "Plotting (plot(), lines(), legend())" }
+          ]
+        },
+        {
+          "name": "Time Series Calculations",
+          "children": [
+            { "name": "ACF (acf())" },
+            { "name": "PACF (pacf())" },
+            { "name": "Differencing (diff())" },
+            { "name": "ARIMA models (arima())" },
+            { "name": "Forecasting (predict())" },
+            { "name": "Exponential smoothing (HoltWinters())" },
+            { "name": "Box-Jenkins diagnostic checks (tsdiag())" },
+            { "name": "Phillips-Perron Unit Root Test (PP.test())" },
+            { "name": "Seasonal decomposition (decompose(), stl())" },
+            { "name": "VAR processes" },
+            { "name": "Cointegration testing" }
+          ]
+        },
+        {
+          "name": "Loss Distribution Calculations",
+          "children": [
+            { "name": "PDF (d<dist>())" },
+            { "name": "CDF (p<dist>())" },
+            { "name": "Quantiles (q<dist>())" },
+            { "name": "Random variate generation (r<dist>())" },
+            { "name": "Numerical maximum likelihood estimation (nlm())" },
+            { "name": "Fitting distributions (fitdistr() in 'MASS' package)" }
+          ]
+        },
+        {
+          "name": "Data Manipulation & Visualization",
+          "children": [
+            { "name": "str() for structure" },
+            { "name": "head()" },
+            { "name": "aggregate() for summarising" },
+            { "name": "hist() for histograms" },
+            { "name": "qqplot() for Q-Q plots" },
+            { "name": "sapply() for applying functions" },
+            { "name": "Working with dates (as.Date())" },
+            { "name": "Setting seed (set.seed())" }
+          ]
+        },
+        {
+          "name": "Package Management",
+          "children": [
+            { "name": "install.packages()" },
+            { "name": "library()" }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Machine Learning (Supervised & Unsupervised)",
+      "children": [
+        {
+          "name": "Supervised Learning",
+          "children": [
+            { 
+              "name": "Regression Trees (Decision Trees)",
+              "children": [
+                {"name": "tree() function for creation"},
+                {"name": "predict() for predictions"}
+              ]
+            },
+            { 
+              "name": "Random Forests (Bagging/Bootstrap Aggregating)",
+              "children": [
+                {"name": "randomForest() function"},
+                {"name": "ntree: number of trees"},
+                {"name": "mtry: number of variables considered at each split"}
+              ]
+            },
+            { 
+              "name": "Naïve Bayes Classification",
+              "children": [
+                {"name": "Estimating probabilities P(Y=y), P(X=x|Y=y)"},
+                {"name": "nb.probs() function"}
+              ]
+            },
+            { 
+              "name": "Evaluation Metrics (Classification)",
+              "children": [
+                {"name": "Confusion Matrix"},
+                {"name": "Recall"},
+                {"name": "Precision"},
+                {"name": "F1 Score"},
+                {"name": "False Positive Rate"},
+                {"name": "Accuracy"}
+              ]
+            }
+          ]
+        },
+        {
+          "name": "Unsupervised Learning",
+          "children": [
+            { 
+              "name": "Principal Component Analysis (PCA)",
+              "children": [
+                {"name": "prcomp() function"},
+                {"name": "Reduces data dimensionality"},
+                {"name": "Identifies latent substructure"},
+                {"name": "Detects anomalies"}
+              ]
+            },
+            { 
+              "name": "K-means Clustering",
+              "children": [
+                {"name": "kmeans() function"},
+                {"name": "Cluster centres ($centers)"},
+                {"name": "Total within-group sum of squares ($tot.withinss)"},
+                {"name": "Selecting optimal number of clusters (Elbow method)"}
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
+
